@@ -3,7 +3,6 @@
 # This code is to create 1 single new card and process it into the required format that the models need
 
 # Import required libraries
-import scrython
 import pandas as pd
 import nest_asyncio
 import numpy as np

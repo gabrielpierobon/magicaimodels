@@ -8,13 +8,15 @@ import pandas as pd
 import numpy as np
 from functions import obtain_unique_values, load_models, predict_dummy_binary, predict_dummy_multiclass, predict_dummy_numeric
 from streamlit_player import st_player
-
 import nltk
+
+# Download nlto english stopwords
 nltk.download('stopwords')
 
 # Show Magic's logo
 st.sidebar.image('./static/Magic-The-Gathering-Logo.png', use_column_width=True)
 
+# Title to display on the App
 st.markdown("""
 # Magic The Gathering
 ### Artificial Intelligence Models
@@ -24,6 +26,7 @@ Welcome to our **Magic: The Gathering card prediction models** with **Artificial
 *Our vision is to bring AI to Magic and help evolving this amazing game!*
 """)
 
+# If they check this button, we show a much detailed description
 if st.checkbox('<<< HOW DOES IT WORK?'):
     st.markdown("""
     This site serves as demonstration to many Machine Learning models that are trained using the information from cards the Scryfall Magic The Gathering API.
@@ -48,7 +51,8 @@ if st.checkbox('<<< HOW DOES IT WORK?'):
     *  **vvv** Look down below: Select the model you want to use
     *  Run the model with the **EXECUTE MODEL** button
     """)
-# Embed a video
+
+# Embed a video tutorial
 # st_player("https://youtu.be/9dnHes2sH6A")
 st.video("./static/Media1.mp4", format="video/mp4")
 

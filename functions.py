@@ -31,7 +31,7 @@ def clean_text(text):
         text = 'failed'
     return text
 
-
+# This function loads the model selected by the user
 def load_models(model_type,target): # BIN, target_binary
 
     # load the machine learning models from disk
@@ -85,7 +85,7 @@ def load_models(model_type,target): # BIN, target_binary
 
     return lr_model, gb_model, dl_model, scaler, tokenizer, required_model_cols, max_seq_lens, selected_classes, int_to_color
 
-
+# This functions performs predictions using the binary models
 def predict_dummy_binary(df, tokenizer, max_seq_lens, scaler, required_model_cols, lr_model, gb_model, dl_model):
 
     # Apply the clean_text function and obtain the token sequences required for prediction
@@ -135,7 +135,7 @@ def predict_dummy_binary(df, tokenizer, max_seq_lens, scaler, required_model_col
 
     return prediction_response
 
-
+# This functions performs predictions using the numeric models
 def predict_dummy_numeric(df, tokenizer, max_seq_lens, scaler, required_model_cols, minimum_val, lr_model, gb_model, dl_model):
 
     # Apply the clean_text function and obtain the token sequences required for prediction
@@ -174,7 +174,7 @@ def predict_dummy_numeric(df, tokenizer, max_seq_lens, scaler, required_model_co
 
     return prediction_response
 
-
+# This functions performs predictions using the multiclass models
 def predict_dummy_multiclass(df, tokenizer, max_seq_lens, scaler, required_model_cols, selected_classes, int_to_color, lr_model, gb_model, dl_model):
 
     # Apply the clean_text function and obtain the token sequences required for prediction

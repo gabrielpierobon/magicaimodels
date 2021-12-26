@@ -1,7 +1,3 @@
-# New Card
-
-# This code is to create 1 single new card and process it into the required format that the models need
-
 # Import required libraries
 import pandas as pd
 import nest_asyncio
@@ -15,6 +11,7 @@ from nltk.tokenize import TweetTokenizer
 # Configurations
 warnings.filterwarnings('ignore')
 
+# This function takes a card and transforms it to the shape required by the models
 def transform_card(insert):
 
     # Create the empty dataset to populate with our card

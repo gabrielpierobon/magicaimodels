@@ -2,3 +2,4 @@ nltk
 pandas
 numpy
 keras
+tensorflow

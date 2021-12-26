@@ -9,6 +9,7 @@ import numpy as np
 from functions import obtain_unique_values, load_models, predict_dummy_binary, predict_dummy_multiclass, predict_dummy_numeric
 from streamlit_player import st_player
 
+import nltk
 nltk.download('stopwords')
 
 # Show Magic's logo

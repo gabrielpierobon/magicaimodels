@@ -4,3 +4,4 @@ numpy
 keras
 tensorflow
 streamlit_player
+scikit-learn

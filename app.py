@@ -69,6 +69,9 @@ settype_unique_list = list(card_db['set_type'].unique())
 with open('./models/model_marketplace.json') as json_file:
     model_dict = json.load(json_file)
 
+# Title for model section
+st.write("### Use the models")
+
 # Allow the user to select a model
 model_selected = st.selectbox('Select your model', list(model_dict.keys()))
 

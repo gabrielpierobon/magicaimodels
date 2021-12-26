@@ -3,3 +3,4 @@ pandas
 numpy
 keras
 tensorflow
+streamlit_player

@@ -1,7 +1,0 @@
-streamlit
-ast
-pandas
-numpy
-keras
-nltk
-streamlit_player

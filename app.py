@@ -53,7 +53,7 @@ if st.checkbox('<<< HOW DOES IT WORK?'):
     """)
 
 # Link to the YouTube channel
-link = '[Visit all the videos in the YouTube channel](https://www.youtube.com/channel/UC3__atAqSUrIMNLg_-6aJBA)'
+link = '[Watch all the videos in the YouTube channel](https://www.youtube.com/channel/UC3__atAqSUrIMNLg_-6aJBA)'
 st.markdown(link, unsafe_allow_html=True)
 
 # Embed a video tutorial
@@ -433,3 +433,9 @@ if st.button('EXECUTE MODEL!'):
 
 
     st.success('Done!')
+
+
+
+# Contact Me
+lk_link = '[Contact me on LinkedIn](https://www.linkedin.com/in/gabrielpierobon/)'
+st.markdown(lk_link, unsafe_allow_html=True)

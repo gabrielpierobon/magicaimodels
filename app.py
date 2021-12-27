@@ -86,15 +86,9 @@ model = model_dict[model_selected]['MODEL']
 
 # Print some description of the selected model to the user
 col1, col2, col3 = st.columns(3)
-col1.write(f"""**Model Family**:
-
-                                {model_dict[model_selected]['MODEL FAMILY']}""")
-col2.write(f"""**Model Question**:
-
-                                {model_dict[model_selected]['MODEL QUESTION']}""")
-col3.write(f"""**Model Description**:
-
-                                {model_dict[model_selected]['MODEL DESCRIPTION']}""")
+col1.write(f"""**Model Family**: {model_dict[model_selected]['MODEL FAMILY']}""")
+col2.write(f"""**Model Question**: {model_dict[model_selected]['MODEL QUESTION']}""")
+col3.write(f"""**Model Description**: {model_dict[model_selected]['MODEL DESCRIPTION']}""")
 
 # Source Selection
 source_selection = st.sidebar.radio('Select a new card!', ['FROM JSON', 'USE FORM', 'FROM DB'])

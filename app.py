@@ -26,8 +26,10 @@ Welcome to our **Magic: The Gathering card prediction models** with **Artificial
 *Our vision is to bring AI to Magic and help evolving this amazing game!*
 """)
 
+col4, col5 = st.columns(2)
+
 # If they check this button, we show a much detailed description
-if st.checkbox('<<< HOW DOES IT WORK?'):
+if col4.checkbox('<<< HOW DOES IT WORK?'):
     st.markdown("""
     This site serves as demonstration to many Machine Learning models that are trained using the information from cards the Scryfall Magic The Gathering API.
 
@@ -54,7 +56,7 @@ if st.checkbox('<<< HOW DOES IT WORK?'):
 
 # Link to the YouTube channel
 link = '[Watch all the videos in the YouTube channel](https://www.youtube.com/channel/UC3__atAqSUrIMNLg_-6aJBA)'
-st.markdown(link, unsafe_allow_html=True)
+col5.markdown(link, unsafe_allow_html=True)
 
 # Embed a video tutorial
 st_player("https://youtu.be/30_tT_R7qtQ") # youtube video tutorial
@@ -446,5 +448,7 @@ st.write("")
 st.write("")
 st.write("")
 st.write("")
-col4, col5, col6 = st.columns(3)
-col5.markdown(lk_link, unsafe_allow_html=True)
+st.write("")
+st.write("")
+st.write("")
+st.markdown(lk_link, unsafe_allow_html=True)

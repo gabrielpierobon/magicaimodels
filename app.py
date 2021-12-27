@@ -10,7 +10,7 @@ from functions import obtain_unique_values, load_models, predict_dummy_binary, p
 from streamlit_player import st_player
 import nltk
 
-# Download nlto english stopwords
+# Download nltk english stopwords
 nltk.download('stopwords')
 
 # Show Magic's logo
@@ -53,8 +53,8 @@ if st.checkbox('<<< HOW DOES IT WORK?'):
     """)
 
 # Embed a video tutorial
-# st_player("https://youtu.be/9dnHes2sH6A")
-st.video("./static/Media1.mp4", format="video/mp4")
+st_player("https://youtu.be/30_tT_R7qtQ") # youtube video tutorial
+# st.video("./static/Media1.mp4", format="video/mp4")
 
 # Load the Card DB
 card_db = pd.read_csv("./datasets/WEBAPP_datasets_vow_20211220_FULL.csv")

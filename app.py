@@ -9,7 +9,6 @@ import numpy as np
 from functions import obtain_unique_values, load_models, predict_dummy_binary, predict_dummy_multiclass, predict_dummy_numeric
 from streamlit_player import st_player
 import nltk
-import webbrowser
 
 # Download nltk english stopwords
 nltk.download('stopwords')
@@ -57,10 +56,8 @@ if st.checkbox('<<< HOW DOES IT WORK?'):
 st_player("https://youtu.be/30_tT_R7qtQ") # youtube video tutorial
 # st.video("./static/Media1.mp4", format="video/mp4")
 
-url = 'https://www.youtube.com/channel/UC3__atAqSUrIMNLg_-6aJBA'
-if st.button('YOUTUBE CHANNEL'):
-    webbrowser.open_new_tab(url)
-
+link = '[YouTube Channel](https://www.youtube.com/channel/UC3__atAqSUrIMNLg_-6aJBA)'
+st.markdown(link, unsafe_allow_html=True)
 
 # Load the Card DB
 card_db = pd.read_csv("./datasets/WEBAPP_datasets_vow_20211220_FULL.csv")
@@ -241,8 +238,6 @@ else:
 
             # Get the data from the selected card
             selected_card = st.sidebar.selectbox('Select your card', card_db[card_db['set_name']==selected_set]['name'].unique())
-
-            print(card_db[card_db['set_name']==selected_set]['name'].unique())
 
             selected_card_df = card_db[(card_db['set_name']==selected_set) & (card_db['name']==selected_card)]
 

@@ -52,12 +52,13 @@ if st.checkbox('<<< HOW DOES IT WORK?'):
     *  Run the model with the **EXECUTE MODEL** button
     """)
 
+# Link to the YouTube channel
+link = '[Visit all the videos in the YouTube channel](https://www.youtube.com/channel/UC3__atAqSUrIMNLg_-6aJBA)'
+st.markdown(link, unsafe_allow_html=True)
+
 # Embed a video tutorial
 st_player("https://youtu.be/30_tT_R7qtQ") # youtube video tutorial
 # st.video("./static/Media1.mp4", format="video/mp4")
-
-link = '[YouTube Channel](https://www.youtube.com/channel/UC3__atAqSUrIMNLg_-6aJBA)'
-st.markdown(link, unsafe_allow_html=True)
 
 # Load the Card DB
 card_db = pd.read_csv("./datasets/WEBAPP_datasets_vow_20211220_FULL.csv")

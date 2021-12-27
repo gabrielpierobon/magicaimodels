@@ -9,6 +9,7 @@ import numpy as np
 from functions import obtain_unique_values, load_models, predict_dummy_binary, predict_dummy_multiclass, predict_dummy_numeric
 from streamlit_player import st_player
 import nltk
+import webbrowser
 
 # Download nltk english stopwords
 nltk.download('stopwords')
@@ -55,6 +56,11 @@ if st.checkbox('<<< HOW DOES IT WORK?'):
 # Embed a video tutorial
 st_player("https://youtu.be/30_tT_R7qtQ") # youtube video tutorial
 # st.video("./static/Media1.mp4", format="video/mp4")
+
+url = 'https://www.youtube.com/channel/UC3__atAqSUrIMNLg_-6aJBA'
+if st.button('YOUTUBE CHANNEL'):
+    webbrowser.open_new_tab(url)
+
 
 # Load the Card DB
 card_db = pd.read_csv("./datasets/WEBAPP_datasets_vow_20211220_FULL.csv")

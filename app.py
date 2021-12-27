@@ -437,6 +437,13 @@ if st.button('EXECUTE MODEL!'):
 
 
 
+
+
 # Contact Me
 lk_link = '[Contact me on LinkedIn](https://www.linkedin.com/in/gabrielpierobon/)'
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
 st.markdown(lk_link, unsafe_allow_html=True)

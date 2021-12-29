@@ -18,11 +18,6 @@ As of today, we have 3 types of models and use 3 different algorithms:
 
 If you want to learn more about the process, **here's an article**
 
-**How do you start testing the models?**
-*  **<<<** Look at the sidebar on the left. There's where you pick a card or create a card yourself!
-*  Select the data source
-    * FROM JSON: you provide the JSON file with your card (you can also download the template).
-    * USE FORM: you complete a form with your own card data, starting from a template.
-    * FROM DB: you load a REAL card from the app's database. You can also modify the card!
-*  **vvv** Look down below: Select the model you want to use
-*  Run the model with the **EXECUTE MODEL** button
+### How to run the app
+1. Install the libraries required from `requirements.txt`
+2. run the app using `streamlit run app.py`

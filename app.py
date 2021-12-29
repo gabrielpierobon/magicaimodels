@@ -235,6 +235,8 @@ else:
     else:
         if source_selection == 'FROM DB':
 
+            st.write("Images are courtesy of the Scryfall API")
+
             # Allow the user to select the set
             selected_set = st.sidebar.selectbox('Select a set', sorted(card_db['set_name'].unique()))
 

@@ -388,56 +388,61 @@ model_type, target = (model).split("_",1)
 
 if st.button('EXECUTE MODEL!'):
 
-    with st.spinner('Executing...'):
+    try:
 
-        # Transform the card to the data format required
-        # processed_card = transform_card(card_from_json)
-        processed_card = transform_card(new_card)
+        with st.spinner('Executing...'):
 
-        # Print it to the app
-        st.write("#### Card transformed to data:")
-        st.dataframe(processed_card)
+            # Transform the card to the data format required
+            # processed_card = transform_card(card_from_json)
+            processed_card = transform_card(new_card)
 
-        # Load the models and define the target
-        lr_model, gb_model, dl_model, scaler, tokenizer, required_model_cols, max_seq_lens, selected_classes, int_to_color = load_models(model_type, target)
+            # Print it to the app
+            st.write("#### Card transformed to data:")
+            st.dataframe(processed_card)
 
-        # PREDICTIONS
+            # Load the models and define the target
+            lr_model, gb_model, dl_model, scaler, tokenizer, required_model_cols, max_seq_lens, selected_classes, int_to_color = load_models(model_type, target)
 
-        if model_type == "BIN":
-            # Obtain the predictions BINARY
-            prediction_response = predict_dummy_binary(processed_card, tokenizer, max_seq_lens, scaler, required_model_cols, lr_model, gb_model, dl_model)
+            # PREDICTIONS
 
-        else:
-            if model_type == "MULT":
-                # Obtain the predictions MULTICLASS
-                prediction_response = predict_dummy_multiclass(processed_card, tokenizer, max_seq_lens, scaler, required_model_cols, selected_classes, int_to_color, lr_model, gb_model, dl_model)
+            if model_type == "BIN":
+                # Obtain the predictions BINARY
+                prediction_response = predict_dummy_binary(processed_card, tokenizer, max_seq_lens, scaler, required_model_cols, lr_model, gb_model, dl_model)
 
             else:
-                if model_type == "REGR":
-                    # for cmc
-                    minimum_val = 0
-                    # Obtain the NUMERIC
-                    prediction_response = predict_dummy_numeric(processed_card, tokenizer, max_seq_lens, scaler, required_model_cols, minimum_val, lr_model, gb_model, dl_model)
+                if model_type == "MULT":
+                    # Obtain the predictions MULTICLASS
+                    prediction_response = predict_dummy_multiclass(processed_card, tokenizer, max_seq_lens, scaler, required_model_cols, selected_classes, int_to_color, lr_model, gb_model, dl_model)
 
                 else:
-                    pass
+                    if model_type == "REGR":
+                        # for cmc
+                        minimum_val = 0
+                        # Obtain the NUMERIC
+                        prediction_response = predict_dummy_numeric(processed_card, tokenizer, max_seq_lens, scaler, required_model_cols, minimum_val, lr_model, gb_model, dl_model)
 
-        # Print the predictions to the app
+                    else:
+                        pass
 
-        # Predictions in Markup format
-        st.write("#### Predictions:")
-        for i in prediction_response:
-            st.write(f"##### {i}")
-            prediction_df = pd.DataFrame([prediction_response[i]])
-            prediction_df.index = [i]
-            st.dataframe(prediction_df)
+            # Print the predictions to the app
 
-        # Predictions in JSON Format
-        st.write("#### JSON Output:")
-        st.write(prediction_response)
+            # Predictions in Markup format
+            st.write("#### Predictions:")
+            for i in prediction_response:
+                st.write(f"##### {i}")
+                prediction_df = pd.DataFrame([prediction_response[i]])
+                prediction_df.index = [i]
+                st.dataframe(prediction_df)
+
+            # Predictions in JSON Format
+            st.write("#### JSON Output:")
+            st.write(prediction_response)
 
 
-    st.success('Done!')
+        st.success('Done!')
+
+    except:
+        st.warning("Something went wrong. Check that you loaded a card correctly")
 
 
 

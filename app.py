@@ -42,7 +42,7 @@ if col4.checkbox('<<< HOW DOES IT WORK?'):
     * **BINARY** models, **MULTICLASS** models and **NUMERIC** models, to define the type of prediction we want to do (a YES or NO question vs a specific category prediction)
     * **Logistic/Linear Regression**, **Gradient Boosting** and **Deep Learning** (Embeddings and bidirectional LSTM network)
 
-    If you want to learn more about the process, **here's an article**
+    If you want to learn more about the process, [**here's an article**](https://towardsdatascience.com/artificial-intelligence-in-magic-the-gathering-4367e88aee11)
 
     **How do you start testing the models?**
     *  **<<<** Look at the sidebar on the left. There's where you pick a card or create a card yourself!

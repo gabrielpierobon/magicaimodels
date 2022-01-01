@@ -442,7 +442,7 @@ if st.button('EXECUTE MODEL!'):
         st.success('Done!')
 
     except:
-        st.warning("Something went wrong. Check that you loaded a card correctly\nYou should provide a valid JSON, complete a card form or load a card from the database")
+        st.warning("Something went wrong. Check that you loaded a card correctly. You should provide a valid JSON, complete a card form or load a card from the database")
 
 
 

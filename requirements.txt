@@ -2,6 +2,7 @@ nltk
 pandas
 numpy
 keras
-tensorflow
+tensorflow; sys_platform != 'darwin'
+tensorflow-macos; sys_platform == 'darwin'
 streamlit_player
 scikit-learn
